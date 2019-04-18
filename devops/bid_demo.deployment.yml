@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: bid-demo
+  namespace: default
+spec:
+  replicas: 1
+  template:
+   metadata:
+    labels:
+     k8s-app: bid-demo
+   spec:
+    containers:
+    - name: bid-demo
+      image: gcr.io/annular-fold-237409/bid_demo:0.1
+      imagePullPolicy: "IfNotPresent"
+      ports:
+      - containerPort: 
+   
